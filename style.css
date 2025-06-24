@@ -1,0 +1,372 @@
+/* 1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS DE TEMA */
+:root {
+  /* Tema Claro (Padrão) */
+  --clr-background: #f8f9fa;
+  --clr-surface: #ffffff;
+  --clr-primary: #007bff;
+  --clr-primary-hover: #0056b3;
+  --clr-accent: #343a40;
+  --clr-text-primary: #333;
+  --clr-text-secondary: #f4f4f4;
+  --clr-border: #dee2e6;
+  --clr-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --clr-project-bg: #fdfdfd;
+  --font-family: 'Poppins', sans-serif;
+}
+
+body.dark-theme {
+  /* Tema Escuro */
+  --clr-background: #121212;
+  --clr-surface: #1e1e1e;
+  --clr-primary: #4dabf7;
+  --clr-primary-hover: #228be6;
+  --clr-accent: #2c2c2c;
+  --clr-text-primary: #f1f3f5;
+  --clr-text-secondary: #f1f3f5;
+  --clr-border: #495057;
+  --clr-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --clr-project-bg: #2c2c2c;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.7;
+  background-color: var(--clr-background);
+  color: var(--clr-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden; /* Previne scroll horizontal durante animações */
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0;
+}
+
+/* 2. BARRA DE NAVEGAÇÃO */
+.navbar {
+  background: var(--clr-surface);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.logo {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--clr-text-primary);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--clr-primary);
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  color: var(--clr-text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--clr-text-primary);
+  cursor: pointer;
+}
+
+/* 3. CABEÇALHO (HERO) */
+.hero {
+  background: var(--clr-accent);
+  color: var(--clr-text-secondary);
+  padding: 80px 20px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 1.3em;
+  color: var(--clr-primary);
+}
+
+/* 4. SEÇÕES GERAIS */
+main > section {
+  background: var(--clr-surface);
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: var(--clr-shadow);
+  padding: 50px 40px;
+  transition: background-color 0.3s ease;
+}
+
+.section-title {
+  color: var(--clr-primary);
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+/* 5. SEÇÃO SOBRE MIM */
+.sobre-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.sobre-img {
+  flex-shrink: 0;
+}
+
+.sobre-img img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain; 
+  border-radius: 50%;
+  border: 5px solid var(--clr-primary);
+  background-color: var(--clr-accent); 
+}
+
+.sobre-texto p {
+  margin-bottom: 15px;
+}
+
+/* 6. SEÇÃO DE PROJETOS */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.projeto-item {
+  background: var(--clr-project-bg);
+  border: 1px solid var(--clr-border);
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.projeto-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.projeto-item h3 {
+  color: var(--clr-text-primary);
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.projeto-item .tecnologias-usadas {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.projeto-item p {
+  flex-grow: 1; 
+}
+
+.links-projeto {
+  margin-top: 20px;
+}
+
+.links-projeto a {
+  display: inline-block;
+  background: var(--clr-primary);
+  color: #fff;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+.links-projeto a:hover {
+  background: var(--clr-primary-hover);
+}
+
+.links-projeto a i {
+  margin-right: 8px;
+}
+
+/* 7. SEÇÃO DE CONTATO */
+#contato {
+  text-align: center;
+}
+
+.contato-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contato-links a {
+  color: var(--clr-text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.contato-links a:hover {
+  color: var(--clr-primary);
+}
+
+.contato-links i {
+  margin-right: 8px;
+}
+
+/* 8. RODAPÉ */
+footer {
+  background: var(--clr-accent);
+  color: var(--clr-text-secondary);
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 40px;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 9. BOTÃO VOLTAR AO TOPO */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--clr-primary);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: none; /* Inicia oculto */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  z-index: 1000;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: var(--clr-primary-hover);
+  transform: translateY(-5px);
+}
+
+/* 10. RESPONSIVIDADE (MEDIA QUERIES) */
+
+/* Tablets e Celulares Maiores */
+@media (max-width: 992px) {
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+  .sobre-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5em;
+  }
+  .hero p {
+    font-size: 1.1em;
+  }
+  .section-title {
+    font-size: 1.8em;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-surface);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: var(--clr-shadow);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, background-color 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active i::before {
+    content: '\f00d'; 
+  }
+}
+
+
