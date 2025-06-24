@@ -23,7 +23,6 @@ O design é responsivo, moderno e conta com suporte a tema claro/escuro 🌙☀�
 - Tema claro/escuro com botão interativo ☀️🌙
 - Animações ao rolar a página com AOS.js
 - Botão “Voltar ao topo” 🔝
-- Layout responsivo para mobile, tablet e desktop 📱💻🖥️
 
 ## 🧪 Aprendizados
 
